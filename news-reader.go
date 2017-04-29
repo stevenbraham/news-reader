@@ -2,14 +2,23 @@ package main
 
 import (
 	"fmt"
+	"github.com/mmcdole/gofeed"
 	"news-reader/websites"
 	"os"
 )
 
 func main() {
-	//list all websites
 	website := getSelectedWebsite()
-	fmt.Println(website)
+	fmt.Println("Headlines from", website.Name, "\n")
+	//read items with the rss library
+	feed, _ := gofeed.NewParser().ParseURL(website.Url)
+	for index, item := range feed.Items {
+		fmt.Println(item.Title)
+		if index > 9 {
+			//stop after 10 items
+			break
+		}
+	}
 }
 
 //Reads website from command line or displays an command line input tool

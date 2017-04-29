@@ -7,7 +7,7 @@ type Website struct {
 //all news website that my program can use
 var Websites = []Website{
 	{
-		Name: "BCC",
+		Name: "BBC",
 		Url:  "http://feeds.bbci.co.uk/news/video_and_audio/world/rss.xml",
 	},
 	{
@@ -16,7 +16,7 @@ var Websites = []Website{
 	},
 	{
 		Name: "RT",
-		Url:  "http://feeds.bbci.co.uk/news/video_and_audio/world/rss.xml",
+		Url:  "https://www.rt.com/rss/",
 	},
 	{
 		Name: "AlJazeera",
