@@ -3,8 +3,7 @@ This is a small a CLI program that I created so that I can quickly see newsheadl
 
 # How to use
 
-1. Make sure you have the [GoFeed library](https://github.com/mmcdole/gofeed) installed with `go get`
-2. Run `go build`
+Run `make` to generate a new build.
 
 You now have an executable binary program. You can directly run the program from the terminal.
 
