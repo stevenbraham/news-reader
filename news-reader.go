@@ -3,11 +3,14 @@ package main
 import (
 	"fmt"
 	"github.com/mmcdole/gofeed"
+	"gopkg.in/yaml.v2"
+	"io/ioutil"
 	"news-reader/websites"
 	"os"
 )
 
 func main() {
+	loadWebsitesFromFile()
 	website := getSelectedWebsite()
 	fmt.Println("Headlines from", website.Name, "\n")
 	//read items with the rss library
@@ -18,6 +21,16 @@ func main() {
 			//stop after 10 items
 			break
 		}
+	}
+}
+
+//build a lists of website from websites.yaml, if no file exists, it creates a default file
+func loadWebsitesFromFile() {
+	if _, err := os.Stat("websites.yaml"); os.IsNotExist(err) {
+		//file does not exist, create default file
+		encodedDefaultWebsites, _ := yaml.Marshal(DefaultWebsites)
+		ioutil.WriteFile("websites.yaml", encodedDefaultWebsites, 0777)
+
 	}
 }
 
