@@ -16,9 +16,20 @@ You now have an executable binary program. You can directly run the program from
 
 It will ask from which you site you want have news and fetches the 10 latest headlines. You can give a news site as a argument, for example `./news-reader BBC`.
 
-Currently the following news sites are supported:
+# Adding rss feeds
+
+After running for the first time, the program creates a `websites.yaml` file with the list of all feeds.
+
+Currently the following news sites are added as default:
 
 * BBC
 * CCN
 * RT
 * AlJazeera
+
+To add a new feed, use the following format:
+
+```yaml
+- name: WebsiteName
+  url: http://example.com/feed.rss
+```
