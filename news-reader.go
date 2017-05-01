@@ -48,7 +48,8 @@ func getSelectedWebsite() Website {
 			}
 		}
 		//looped over all options
-		panic(websiteName + " is not a valid website")
+		fmt.Println(websiteName + " is not a valid website")
+		os.Exit(1)
 	}
 	//render input screen
 	fmt.Println("Choose a news source:")
@@ -58,5 +59,9 @@ func getSelectedWebsite() Website {
 	fmt.Print("\nid:")
 	index := 0
 	fmt.Scan(&index)
-	return websites[index] //index out of range will fire if the user selects an invalid id
+	if((index + 1) > len(websites)){
+		//out of range
+		return getSelectedWebsite()
+	}
+	return websites[index]
 }
