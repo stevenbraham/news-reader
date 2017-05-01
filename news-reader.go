@@ -59,7 +59,7 @@ func getSelectedWebsite() Website {
 	fmt.Print("\nid:")
 	index := 0
 	fmt.Scan(&index)
-	if((index + 1) > len(websites)){
+	if (index + 1) > len(websites) {
 		//out of range
 		return getSelectedWebsite()
 	}
