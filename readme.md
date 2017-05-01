@@ -5,7 +5,8 @@ This is a small a CLI program that I created so that I can quickly see newsheadl
 
 Make sure to `go get` the following libraries:
 
-* [mmcdole/gofeed](github.com/mmcdole/gofeed)
+* [mmcdole/gofeed](https://github.com/mmcdole/gofeed)
+* [gopkg.in/yaml.v2](https://github.com/go-yaml/yaml)
 
 # How to use
 
